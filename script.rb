@@ -1,6 +1,6 @@
 def substrings(search_terms, dictionary)
     dictionary.reduce(Hash.new(0)) do |count, string|
-        if string == search_terms.downcase
+        if search_terms.downcase.include?(string)
             count[string] += 1
         end
         count

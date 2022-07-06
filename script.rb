@@ -2,8 +2,7 @@ def substrings(search_terms, dictionary)
     dictionary.reduce(Hash.new(0)) do |count, string|
         offset = 0
         while (offset != nil)
-            offset = search_terms.downcase.index(string, offset)
-            if (offset)
+            if offset = search_terms.downcase.index(string, offset)
                 count[string] += 1
                 offset += 1
             end
